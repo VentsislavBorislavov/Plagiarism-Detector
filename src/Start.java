@@ -4,8 +4,8 @@ public class Start {
     private String message = new String() ;
 
     public Start() {
-        String text1 = "The ability to speak doesn't make you smart smart.";
-        String text2 = "All that for. a drop of blood.";
+        String text1 = "This is some real famous quote that you haven't heard";
+        String text2 = "That is real famous quote. You should have heard it!";
         TextTransformer textTransformer1 = new TextTransformer(text1);
         TextTransformer textTransformer2 = new TextTransformer(text2);
         Detector detector1 = new Detector(textTransformer1.getSeparatedWords(), textTransformer1.getSentenceCount());

@@ -34,6 +34,9 @@ public class TextTransformer {
     }
 
     public int getSentenceCount() {
+        if(sentenceCount<1){
+            return 1;
+        }
         return sentenceCount;
     }
 
