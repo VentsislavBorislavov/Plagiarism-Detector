@@ -1,12 +1,12 @@
 public class Start {
     private String message = new String() ;
     public Start() {
-        String text = "The ability to speak doesn't make you smart smart.";
-        String tetx = "All that for. a drop of blood.";
-        TextTransformer text1 = new TextTransformer(text);
-        TextTransformer text2 = new TextTransformer(tetx);
-        Detector detector1 = new Detector(text1.getSeparatedWords(), text1.getSentenceCount());
-        Detector detector2 = new Detector(text2.getSeparatedWords(), text2.getSentenceCount());
+        String text1 = "The ability to speak doesn't make you smart smart.";
+        String text2 = "All that for. a drop of blood.";
+        TextTransformer textTransformer1 = new TextTransformer(text1);
+        TextTransformer textTransformer2 = new TextTransformer(text2);
+        Detector detector1 = new Detector(textTransformer1.getSeparatedWords(), textTransformer1.getSentenceCount());
+        Detector detector2 = new Detector(textTransformer2.getSeparatedWords(), textTransformer2.getSentenceCount());
         message += "Text1: \n";
         message += "Avg. word length: " + detector1.calculateAverageWordLength() + "\n";
         message += "Type-Token Ratio: " + detector1.calculateAllDifferentWordsRatio() + "\n";
