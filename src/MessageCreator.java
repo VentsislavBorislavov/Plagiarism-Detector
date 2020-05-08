@@ -1,9 +1,9 @@
 import java.text.DecimalFormat;
 
-public class Start {
+public class MessageCreator {
     private String message = new String();
 
-    public Start() {
+    public MessageCreator() {
 
     }
 

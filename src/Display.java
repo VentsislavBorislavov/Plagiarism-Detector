@@ -11,7 +11,7 @@ public class Display extends JFrame implements ActionListener {
     private JTextArea textAreaOne;
     private JTextArea textAreaTwo;
     private JButton click;
-    Start start = new Start();
+    MessageCreator start = new MessageCreator();
 
 
     public Display() {
@@ -53,6 +53,5 @@ public class Display extends JFrame implements ActionListener {
             String tempTextTwo = textAreaTwo.getText();
             results.setText(start.returnFeaturesAndSimilarities(tempTextOne, tempTextTwo));
         }
-
     }
 }
