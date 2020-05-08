@@ -19,9 +19,7 @@ public class TextTransformer {
 
     private void removeSignatures() {
         for (int i = 0; i < separatedWords.length; i++) {
-            if (separatedWords[i].endsWith(".") || separatedWords[i].endsWith("!") || separatedWords[i].endsWith("?") || separatedWords[i].endsWith(",")) {
-                separatedWords[i] = removeLastCharacter(separatedWords[i]);
-            }
+            separatedWords[i] = separatedWords[i].replaceAll("[.,!?;\"]","");
         }
     }
 
@@ -33,10 +31,6 @@ public class TextTransformer {
         }
     }
 
-    private String removeLastCharacter(String str) {
-        return str.substring(0, str.length() - 1);
-    }
-
     public String[] getSeparatedWords() {
         return separatedWords;
     }
@@ -44,5 +38,6 @@ public class TextTransformer {
     public int getSentenceCount() {
         return sentenceCount;
     }
+
 }
 
