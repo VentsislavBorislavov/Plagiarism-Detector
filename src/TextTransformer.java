@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class TextTransformer {
     private String textToCompare;
@@ -10,14 +8,14 @@ public class TextTransformer {
         this.textToCompare = textToCompare;
         separateWords();
         countSentences();
-        removeSignatures();
+        removePunctuationMarks();
     }
 
     private void separateWords() {
         separatedWords = this.textToCompare.split(" ");
     }
 
-    private void removeSignatures() {
+    private void removePunctuationMarks() {
         for (int i = 0; i < separatedWords.length; i++) {
             separatedWords[i] = separatedWords[i].replaceAll("[.,!?;\"]","");
         }
