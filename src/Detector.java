@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,20 +7,21 @@ public class Detector {
     private int sentenceCount;
     private String[] words;
 
+
     public Detector(String[] words, int sentenceCount) {
         this.words = words;
         this.sentenceCount = sentenceCount;
     }
 
-    public double calculateAverageWordLength() {
-        double sum = 0;
+    public float calculateAverageWordLength() {
+        float sum = 0;
         for (int i = 0; i < words.length; i++) {
             sum += words[i].length();
         }
         return sum / words.length;
     }
 
-    public double calculateAllDifferentWordsRatio() {
+    public float calculateAllDifferentWordsRatio() {
         List<String> differentWords = new ArrayList<>();
         differentWords.add(words[0]);
         for (int i = 0; i < words.length; i++) {
@@ -34,10 +36,10 @@ public class Detector {
                 differentWords.add(words[i]);
             }
         }
-        return (double) differentWords.size()/words.length;
+        return (float) differentWords.size()/words.length;
     }
 
-    public double calculateAverageUniqueWords() {
+    public float calculateAverageUniqueWords() {
         int uniqueWordCount = 0;
         for (int i = 0; i < words.length; i++) {
             int wordCount = 0;
@@ -51,11 +53,11 @@ public class Detector {
                 uniqueWordCount++;
             }
         }
-        return (double) uniqueWordCount / words.length;
+        return (float) uniqueWordCount / words.length;
     }
 
-    public double calculateAverageSentenceLength() {
-        return (double) words.length / sentenceCount;
+    public float calculateAverageSentenceLength() {
+        return (float) words.length / sentenceCount;
     }
 
 

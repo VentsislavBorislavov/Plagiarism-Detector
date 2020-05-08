@@ -1,5 +1,8 @@
+import java.text.DecimalFormat;
+
 public class Start {
     private String message = new String() ;
+
     public Start() {
         String text1 = "The ability to speak doesn't make you smart smart.";
         String text2 = "All that for. a drop of blood.";
@@ -21,11 +24,11 @@ public class Start {
         System.out.println(message);
     }
 
-    private double calculateSimilarities(Detector detector1, Detector detector2) {
-        return Math.abs(detector1.calculateAverageWordLength() - detector2.calculateAverageWordLength()) * 11 +
-                Math.abs(detector1.calculateAllDifferentWordsRatio() - detector2.calculateAllDifferentWordsRatio()) * 33 +
-                Math.abs(detector1.calculateAverageUniqueWords() - detector2.calculateAverageUniqueWords()) * 50 +
-                Math.abs(detector1.calculateAverageSentenceLength() - detector2.calculateAverageSentenceLength()) * 0.4;
+    private float calculateSimilarities(Detector detector1, Detector detector2) {
+        return (float) (Math.abs(detector1.calculateAverageWordLength() - detector2.calculateAverageWordLength()) * 11 +
+                        Math.abs(detector1.calculateAllDifferentWordsRatio() - detector2.calculateAllDifferentWordsRatio()) * 33 +
+                        Math.abs(detector1.calculateAverageUniqueWords() - detector2.calculateAverageUniqueWords()) * 50 +
+                        Math.abs(detector1.calculateAverageSentenceLength() - detector2.calculateAverageSentenceLength()) * 0.4);
     }
 
 
