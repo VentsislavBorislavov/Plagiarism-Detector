@@ -1,13 +1,10 @@
 import java.text.DecimalFormat;
 
 public class MessageCreator {
-    private String message = new String();
-
     public MessageCreator() {
-
     }
-
     public String returnFeaturesAndSimilarities(String textOne, String textTwo) {
+        String message = new String();
         TextTransformer textTransformer1 = new TextTransformer(textOne);
         TextTransformer textTransformer2 = new TextTransformer(textTwo);
         Detector detector1 = new Detector(textTransformer1.getSeparatedWords(), textTransformer1.getSentenceCount());
